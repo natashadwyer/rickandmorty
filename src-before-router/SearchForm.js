@@ -23,11 +23,10 @@ function SearchForm(props) {
   }
 
 
-//   function handleFilter(e){
-//     const userInput = e.target.value;
-//      console.log(optionsArray)
-//      console.log(userInput)
-//   }
+  function handleFilter(e){
+     setFilterTerm(e.target.value)
+     console.log(e)
+  }
     
   return (
    <>
@@ -46,7 +45,7 @@ function SearchForm(props) {
 </form> {/* select pges numbers */}
 
 
-    {/* <form id="FilterSearch">
+    <form id="FilterSearch">
         <input 
         type="text" 
         onChange={handleFilter} 
@@ -54,7 +53,7 @@ function SearchForm(props) {
         <button>filter</button>
     </form>
 
-    <div>  {filterTerm}</div> */}
+    <div>  {filterTerm}</div>
    </>
   )
 }

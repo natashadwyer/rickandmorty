@@ -8,7 +8,7 @@ const RICKANDMORTY_BASE_URL = 'https://rickandmortyapi.com/api/character';
 
 function SearchResults(props) {
 
-    const [ data, setData ]     = useState( [] );
+    const [ data, setPhotos ]     = useState( [] );
     const [ loading, setLoading ] = useState( true );
     const [ error, setError ]     = useState( null );
     
@@ -25,7 +25,7 @@ function SearchResults(props) {
        axios.get(`https://rickandmortyapi.com/api/character?page=${query}`)
             .then(response => {
                 console.log(response.data.results);
-                 setData( response.data.results);
+                 setPhotos( response.data.results);
                  setLoading( false ); // finished loading!
               //this.renderSearchResults(res.data.photos.photo);
             })
@@ -49,27 +49,10 @@ function SearchResults(props) {
         .catch(err => console.warn(err))
     }
 
-    function handleFilter(e){
-        const userInput = e.target.value;
-         console.log(userInput)
-         let filtersNames = data.filter(character => 
-            console.log(character.name ) 
-
-         )
-         console.log(filtersNames)
-      }
-
 
  if(error){return <b>there is an error loading your page or character</b>}
   return (
     <div>
-          <form id="FilterSearch">
-        <input 
-        type="text" 
-        onChange={handleFilter} 
-        placeholder="add number 1 from 1 to 42"></input>
-        <button>filter</button>
-    </form>
       <p>results {props.searchText}</p> 
         
         {
