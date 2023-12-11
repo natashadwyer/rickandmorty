@@ -31,7 +31,7 @@ function RickAndMortyApp() {
     {/* so tht the child csn pss the search 
     text from the form back uo the tree to the parent */}
     <SearchForm  onSearchSubmit={performSearch}  />
-
+    <p>hello world</p>
     {output}
     </>
     
